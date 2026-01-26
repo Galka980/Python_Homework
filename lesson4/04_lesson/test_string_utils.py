@@ -114,3 +114,25 @@ class TestStringUtils:
     def test_contains_non_string_input(self, utils):
         # Проверяем поведение с нестроковыми символами
         assert utils.contains("test123", 1) == False  # число как символ
+
+        # Инициализация класса
+        utils = StringUtils()
+
+        # starts_with
+        print(utils.starts_with("Hello", "H"))  # True
+        print(utils.starts_with("Hello", "h"))  # False
+
+        # ends_with
+        print(utils.ends_with("World", "d"))  # True
+        print(utils.ends_with("World", "D"))  # False
+
+        # is_empty
+        print(utils.is_empty(""))  # True
+        print(utils.is_empty("   "))  # True
+        print(utils.is_empty(None))  # True
+        print(utils.is_empty("Hello"))  # False
+
+        # list_to_string
+        print(utils.list_to_string([1, 2, 3]))  # "1, 2, 3"
+        print(utils.list_to_string(["a", "b", "c"], " - "))  # "a - b - c"
+        print(utils.list_to_string([True, False, None]))  # "True, False, None"
